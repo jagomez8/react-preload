@@ -115,7 +115,7 @@ class Preload extends Component {
     render() {
         return (
             <ReactTransitionGroup component="div" className="preload-content">
-                this.state.ready && this.props.mountChildren ? this.props.children : this.props.loadingIndicator
+                { this.state.ready && this.props.mountChildren ? this.props.children : this.props.loadingIndicator } 
             </ReactTransitionGroup>
         );
     }
