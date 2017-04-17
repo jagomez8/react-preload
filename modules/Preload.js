@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import ImageHelper from './ImageHelper';
 
+import ReactTransitionGroup from 'react-transition-group/TransitionGroup';
+
 const propTypes = {
     // Rendered on success
     children: PropTypes.element.isRequired,
@@ -111,7 +113,11 @@ class Preload extends Component {
     }
 
     render() {
-        return (this.state.ready && this.props.mountChildren ? this.props.children : this.props.loadingIndicator);
+        return (
+            <ReactTransitionGroup component="div" className="preload-content">
+                this.state.ready && this.props.mountChildren ? this.props.children : this.props.loadingIndicator
+            </ReactTransitionGroup>
+        );
     }
 }
 
